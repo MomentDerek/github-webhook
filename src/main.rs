@@ -1,9 +1,8 @@
 use axum::{routing::post, Router};
 
-use log::info;
 use std::net::SocketAddr;
 use tokio::signal;
-use tracing::Level;
+use tracing::{Level, info};
 use tracing_subscriber::{layer::SubscriberExt, util::SubscriberInitExt, EnvFilter, Registry, fmt};
 
 mod config;
@@ -17,7 +16,7 @@ async fn main() {
     
     Registry::default()
         .with(EnvFilter::from_default_env().add_directive(Level::DEBUG.into()))
-        .with(fmt::layer().pretty().with_writer(std::io::stderr))
+        .with(fmt::layer().pretty())
         .with(fmt::layer().with_writer(log_appender))
         .init();
 

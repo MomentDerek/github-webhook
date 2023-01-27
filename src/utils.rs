@@ -1,6 +1,6 @@
 use std::io::{BufReader, BufRead};
 use std::process::{Command, Stdio, ExitStatus};
-use log::info;
+use tracing::info;
 use sha2::Sha256;
 use hmac::{Hmac, Mac};
 
