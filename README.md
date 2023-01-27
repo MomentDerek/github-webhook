@@ -1,6 +1,6 @@
 # Github webhook
 
-参考了https://github.com/Yurunsoft/rust-webhook，在此基础上写成
+参考了<https://github.com/Yurunsoft/rust-webhook>，在此基础上写成
 
 将配置文件改为了yaml，但未添加gitee的支持
 
