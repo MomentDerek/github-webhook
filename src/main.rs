@@ -11,13 +11,13 @@ mod utils;
 #[tokio::main]
 async fn main() {
     // 设置日志
-    let (log_appender, _) =
+    let (log_appender, _guard) =
         tracing_appender::non_blocking(tracing_appender::rolling::daily("log", "webhook-log"));
     
     Registry::default()
         .with(EnvFilter::from_default_env().add_directive(Level::DEBUG.into()))
         .with(fmt::layer().pretty())
-        .with(fmt::layer().with_writer(log_appender))
+        .with(fmt::layer().with_ansi(false).with_writer(log_appender))
         .init();
 
     // 路由
