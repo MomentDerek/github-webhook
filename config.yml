@@ -1,0 +1,9 @@
+server:
+  host: localhost
+  port: 13400
+github:
+  - name: kongying-tavern/genshin-map-cloud
+    password:
+    ref: refs/head/dev
+    cmds:
+      - echo helloworld
